@@ -4,7 +4,7 @@ class Solution {
         while(left<=right&&n>2){
             mid =(left+right)/2;
             if(left==right){break;}
-            if(nums[mid+1]>nums[mid]&&nums[mid]>nums[left]){left=mid+1;}
+            if(nums[mid+1]>nums[mid]&&nums[mid]>=nums[left]){left=mid+1;}
             else{right=mid;}
         }
         if(n<=2){
