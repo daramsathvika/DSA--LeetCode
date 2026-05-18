@@ -1,21 +1,22 @@
 class Solution {
-    public int minSubArrayLen(int k, int[] nums) {
-        int i=0,sum=0,min_len=0,n=nums.length;
+    public int minSubArrayLen(int target, int[] nums) {
+        int i,n=nums.length,len=0,sum=0,minlen=0;
         for(i=0;i<n;i++){
             sum+=nums[i];
-            if(nums[i]>=k){return 1;}
-            if(sum>=k){min_len=i+1;break;}
+            if(sum>=target){break;}
         }
-        if(i==n){return 0;}
-        int left=0,right=i;
-        while(left<=right&&right<n){
-            sum-=nums[left++];
-            if(sum>=k){min_len--;}
-            else{
-                if(right==n-1){break;}
-                sum+=nums[++right];
-            }
+        if(i==n&&target>sum){return 0;}
+        len=i+1;minlen=len;
+        int left=0,right=i;sum-=nums[right];
+        System.out.println(sum);
+        while(left<=right&&right<n){sum+=nums[right];
+            while(sum<target&&right<n-1){right++;sum+=nums[right];}
+            while(sum>target&&left<=right){if(right-left+1<minlen){minlen=right-left+1;}sum-=nums[left];left++;}
+            len=right-left+1;
+            //System.out.println(sum+" "+left+" "+right+" ");
+            if(sum>=target&&right-left+1<minlen){minlen=right-left+1;}
+            right++;len++;
         }
-        return min_len;
+        return minlen;
     }
 }
