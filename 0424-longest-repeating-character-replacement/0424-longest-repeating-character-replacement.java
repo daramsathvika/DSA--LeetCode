@@ -8,7 +8,6 @@ class Solution {
         while(left<=right&&right<n){
             freq[s.charAt(right)-'A']++;
             max=Math.max(max,freq[s.charAt(right)-'A']);
-            if(freq[s.charAt(right)-'A']>max){max=freq[s.charAt(right)-'A'];}
             if(right-left+1>max+k){freq[s.charAt(left)-'A']--;left++;}
             len=right-left+1;
             right++;
