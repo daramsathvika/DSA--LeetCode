@@ -9,13 +9,13 @@ class Solution {
         len=i+1;minlen=len;
         int left=0,right=i;sum-=nums[right];
         System.out.println(sum);
-        while(left<=right&&right<n){sum+=nums[right];
+        while(left<=right&&right<n){sum+=nums[right];len++;
             while(sum<target&&right<n-1){right++;sum+=nums[right];}
-            while(sum>target&&left<=right){if(right-left+1<minlen){minlen=right-left+1;}sum-=nums[left];left++;}
+            while(sum>=target&&left<=right){if(right-left+1<minlen){minlen=right-left+1;}sum-=nums[left];left++;}
             len=right-left+1;
             //System.out.println(sum+" "+left+" "+right+" ");
-            if(sum>=target&&right-left+1<minlen){minlen=right-left+1;}
-            right++;len++;
+            //if(sum>=target&&right-left+1<minlen){minlen=right-left+1;}
+            right++;
         }
         return minlen;
     }
