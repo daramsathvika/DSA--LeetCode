@@ -2,27 +2,30 @@
 
 This repository contains my solutions to Data Structures and Algorithms problems from LeetCode.
 
-I am consistently solving problems to improve problem-solving skills and prepare for technical interviews.
-## 📊 Progress
+I am consistently solving problems to improve my problem-solving skills and prepare for technical interviews.
 
-- Total Problems Solved: 44
-- Easy: 28
-- Medium: 16
-- Hard: 0
+## 📊 Progress
+- Total Problems Solved: 70
+- Easy: 36
+- Medium: 32
+- Hard: 2
 
 ## 🔥 Current Focus
-- Arrays
-- Sliding Window
-- Prefix Sum
-## 📚 Topics Covered
+- Stack
+- Queue
+- Recursion
+- LinkedList
 
+## 📚 Topics Covered
 - Arrays
 - Strings
 - Sliding Window
 - Prefix Sum
 - Hashing
-## 📁 Structure
+- Binary Search
+- Two pointers
 
+## 📁 Structure
 Each problem includes:
 - Solution code
 - Explanation (if needed)
