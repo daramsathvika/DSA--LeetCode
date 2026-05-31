@@ -21,7 +21,7 @@ class Solution {
             if(previ){prev.next=right;}
             right.next=left;
             left.next=temp;
-            System.out.println(right.val+" "+left.val);
+            //System.out.println(right.val+" "+left.val);
             if(temp==null||temp.next==null){break;}
             prev=left;previ=true;
             left=temp;
