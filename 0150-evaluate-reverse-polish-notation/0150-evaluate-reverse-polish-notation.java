@@ -7,20 +7,20 @@ class Solution {
                 s1.push(Integer.parseInt(s[i]));
                 //System.out.println(s1.peek());
                 }
-            else if(s[i].charAt(0)=='+'&&s1.size()>1){
+            else if(s[i].equals("+")&&s1.size()>1){
                 s1.push(s1.pop()+s1.pop());
                 //System.out.println(s1.peek());
                 }
-            else if(s[i].charAt(0)=='-'&&s1.size()>1){
+            else if(s[i].equals("-")&&s1.size()>1){
                 int top =s1.pop();
                 s1.push(s1.pop()-top);
                 //System.out.println(s1.peek());
                 }
-            else if(s[i].charAt(0)=='*'&&s1.size()>1){
+            else if(s[i].equals("*")&&s1.size()>1){
                 s1.push(s1.pop()*s1.pop());
                 //System.out.println(s1.peek());
                 }
-            else if(s[i].charAt(0)=='/'&&s1.size()>1){
+            else if(s[i].equals("/")&&s1.size()>1){
                 int top =s1.pop();
                 if(top==0){continue;}
                 else if(top<0^s1.peek()<0){s1.push(-1*(Math.abs(s1.pop())/Math.abs(top)));}
