@@ -18,7 +18,6 @@ class Solution {
             else if(s[i].equals("/")&&s1.size()>1){
                 int top =s1.pop();
                 if(top==0){continue;}
-                else if(top<0^s1.peek()<0){s1.push(-1*(Math.abs(s1.pop())/Math.abs(top)));}
                 else{s1.push(s1.pop()/top);}
                 }
             else{continue;}
