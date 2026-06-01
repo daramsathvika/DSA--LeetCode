@@ -17,7 +17,7 @@ class Solution {
         while(!(node.next.next==null)){
             istrue=false;
             if(node.next.val==val){node.next=node.next.next;istrue=true;}
-            System.out.println(node.val);
+            //System.out.println(node.val);
             if(!istrue){node=node.next;}
             if(node==null){break;}
         }
