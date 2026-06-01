@@ -2,10 +2,7 @@ class Solution {
     public int evalRPN(String[] s) {
         Stack<Integer> s1 =new Stack<>();
         for(int i=0;i<s.length;i++){
-            if((s[i].charAt(0)-'0'>=0&&s[i].charAt(0)-'0'<=9)||(s[i].charAt(0)=='-'&&s[i].length()>1)){
-                s1.push(Integer.parseInt(s[i]));
-                }
-            else if(s[i].equals("+")&&s1.size()>1){
+            if(s[i].equals("+")&&s1.size()>1){
                 s1.push(s1.pop()+s1.pop());
                 }
             else if(s[i].equals("-")&&s1.size()>1){
@@ -20,7 +17,7 @@ class Solution {
                 if(top==0){continue;}
                 else{s1.push(s1.pop()/top);}
                 }
-            else{continue;}
+            else{s1.push(Integer.parseInt(s[i]));}
         }
         return s1.peek();
     }
