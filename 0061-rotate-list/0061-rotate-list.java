@@ -17,11 +17,12 @@ class Solution {
             tail=tail.next;size++;
         }
         tail.next=head;
-        System.out.println(size);
+        //System.out.println(size);
         int i=size-k%size;
         while(i>0){
             tail=head;head=head.next;i--;
-            System.out.println(head.val);}
+            //System.out.println(head.val);
+            }
             tail.next=null;
         return head;
     }
