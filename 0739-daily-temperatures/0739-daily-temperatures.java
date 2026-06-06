@@ -1,16 +1,12 @@
 class Solution {
     public int[] dailyTemperatures(int[] temps) {
         int i,n=temps.length;
-        int arr[] = new int[n];
-        Stack<Integer> st = new Stack<>();
-        Arrays.fill(arr,0);
-        st.push(0);
-        for(i=1;i<n;i++){
-            while(st.size()>0&&temps[i]>temps[st.peek()]){
-                int k=st.peek();
-                arr[k]=i-st.pop();
-            }
-            //arr[i]=i-st.peek();
+        Deque<Integer> st =new ArrayDeque<>();
+        int[]arr= new int[n];
+        Arrays.fill(arr,0);st.push(n-1);
+        for(i=n-2;i>=0;i--){
+            while(!st.isEmpty()&&temps[i]>=temps[st.peek()]){st.pop();}
+            if(st.size()>0){arr[i]=st.peek()-i;}
             st.push(i);
         }
         return arr;
