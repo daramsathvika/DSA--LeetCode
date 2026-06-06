@@ -10,7 +10,7 @@ class Solution {
         if(i==nums.length){if(!set.contains(newlist)){set.add(newlist);} return ;}
         newlist.add(nums[i]);
         subsetDup(set,newlist,i+1,nums);
-        if(list!=newlist){
+        if(!list.equals(newlist)){
         newlist.remove(Integer.valueOf(nums[i]));
         subsetDup(set,newlist,i+1,nums); }
     }
