@@ -12,7 +12,7 @@ class Solution {
             if(list.contains(j)||(list.size()>0&&list.get(list.size()-1)>j)){continue;}
             list.add(j);
             combi(set,list,i+1,k,n);
-            list.remove(Integer.valueOf(j));
+            list.remove(list.size()-1);
         }
     }
 }
