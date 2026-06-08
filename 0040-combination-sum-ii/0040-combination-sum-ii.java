@@ -7,7 +7,7 @@ class Solution {
         return set;
     }
     public void combi2(List<List<Integer>> set,List<Integer> list,int target,int i,int[] cand){
-        if(target==0){set.add(new ArrayList<>(list));return;}
+        if(target==0){set.add(List.copyOf(list));return;}
         for(int j=i;j<cand.length;j++){
             if(target<0){return;}
             if(j>i&&cand[j]==cand[j-1]){continue;}
