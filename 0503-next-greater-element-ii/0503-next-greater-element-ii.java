@@ -5,15 +5,9 @@ class Solution {
         Arrays.fill(nge,-1);
         Stack<Integer> st = new Stack<>();
         HashSet<Integer> set = new HashSet<>();
-        for(i=0;i<n;i++){
-            while(!st.isEmpty()&&nums[st.peek()]<nums[i]){nge[st.pop()]=nums[i];}
-            st.push(i);
-        }
-        for(i=0;i<n;i++){
-            while(!st.isEmpty()&&nums[st.peek()]<nums[i]){
-                nge[st.pop()]=nums[i];}
-            if(st.isEmpty()){break;}
-            st.push(i);
+        for(i=0;i<2*n-1;i++){
+            while(!st.isEmpty()&&nums[st.peek()]<nums[i%n]){nge[st.pop()]=nums[i%n];}
+            st.push(i%n);
         }
         return nge;
     }
