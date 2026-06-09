@@ -7,8 +7,8 @@ class Solution {
         HashSet<Integer> set = new HashSet<>();
         for(i=0;i<2*n-1;i++){
             while(!st.isEmpty()&&nums[st.peek()]<nums[i%n]){nge[st.pop()]=nums[i%n];}
-            if(i<n){st.push(i%n);}
-            else if(i>=n&&st.isEmpty()){break;}
+            st.push(i%n);
+            //else if(i>=n&&st.isEmpty()){break;}
         }
         return nge;
     }
