@@ -3,9 +3,11 @@ class Solution {
         int i,n=piles.length,min=1,max=Integer.MIN_VALUE,mid=0,ans=0,k;
         long sum=0;
         for(i=0;i<n;i++){
+            sum+=piles[i];
             max=Math.max(max,piles[i]);
         }
-        if(h==n){return max;} 
+        if(sum<=h){return 1;}
+        else if(h==n){return max;} 
         while(min<=max){
             sum=0;
             mid=(min+max)/2;
