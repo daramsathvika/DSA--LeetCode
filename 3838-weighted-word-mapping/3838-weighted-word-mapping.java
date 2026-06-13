@@ -7,7 +7,8 @@ class Solution {
                 sum+=weights[word.charAt(i)-'a'];
                 sum=sum%26;
             }
-            str.append((char)(25-sum+'a'));
+            char c= (char)(25-sum+'a');
+            str.append(c);
         }
         return str.toString();
     }
