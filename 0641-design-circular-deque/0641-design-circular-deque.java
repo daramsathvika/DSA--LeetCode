@@ -6,8 +6,7 @@ class MyCircularDeque {
     int size;
     public MyCircularDeque(int k) {
         int arr[] = new int[k];
-        this.arr= arr;this.k=k;
-        Arrays.fill(arr,-1);this.size=0;
+        this.arr= arr;this.k=k;this.size=0;
         int front = -1;int rear = -1;
         this.front = front;this.rear = rear;
     }
@@ -34,7 +33,6 @@ class MyCircularDeque {
     public boolean deleteFront() {
         if(isEmpty()){return false;}
         size--;
-        arr[front]=-1;
         front=(front+1)%k;
         return true;
     }
@@ -42,7 +40,6 @@ class MyCircularDeque {
     public boolean deleteLast() {
         if(isEmpty()){return false;}
         size--;
-        arr[rear]=-1;
         rear=(rear-1+k)%k;
         return true;
     }
