@@ -4,13 +4,16 @@ class StockSpanner {
     int i;
     int count;
     public StockSpanner() {
-        st=new Stack<>();
-        span=new Stack<>();
+        Stack<Integer> st=new Stack<>();
+        Stack<Integer> span=new Stack<>();
+        this.st=st;
+        this.span =span;
         int i=0;
+        this.i=i;
     }
         
     public int next(int price) {
-        count=1;
+        int count=1;this.count=count;
         if(st.isEmpty()||st.peek()>price){span.push(1);}
         else{
             while(!st.isEmpty()&&st.peek()<=price){
