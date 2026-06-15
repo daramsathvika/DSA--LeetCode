@@ -21,7 +21,7 @@ class StockSpanner {
                 count+=span.pop();
             }
             span.push(count);
-            System.out.println(count);
+            //System.out.println(count);
         }
         st.push(price);
         i++;
