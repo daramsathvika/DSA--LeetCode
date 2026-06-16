@@ -7,10 +7,8 @@ class Solution {
         }
         if (days==1){return max;}
         while(min<=max){
-            int mid=(min+max)/2,sum=0,cap=0,time=0;
-            boolean broke=false;
+            int mid=(min+max)/2,sum=0,time=0;
             for(int i=0;i<n;i++){
-                cap=Math.max(cap,sum);
                 //if(weights[i]>mid){break;}
                 if(sum+weights[i]>mid){time++;sum=0;i--;continue;}
                 else{sum+=weights[i];}
