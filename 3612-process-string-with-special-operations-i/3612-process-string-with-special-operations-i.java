@@ -11,7 +11,6 @@ class Solution {
             else if(s.charAt(i)=='%'){sb.reverse();}
             else{sb.append(s.charAt(i));}
         }
-        String str = new String(sb);
-        return str;
+        return sb.toString();
     }
 }
