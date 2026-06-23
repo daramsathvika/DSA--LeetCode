@@ -23,15 +23,12 @@ class Solution {
     public boolean isvalid(TreeNode root,List<Integer> list){
         if(root==null){return true;}
         if(root.left==null&&root.right==null){
-            if(list.size()==0){list.add(root.val);return true;}
-            else if(list.get(list.size()-1)<root.val){
-                list.add(root.val);return true;}
-            else{return false;}
+            if(list.size()>0&&list.get(list.size()-1)>=root.val){return false;}
+            else{list.add(root.val);return true;}
         }
         boolean one=isvalid(root.left,list);
-        if(list.size()==0){list.add(root.val);}
-        else if(list.get(list.size()-1)<root.val){list.add(root.val);}
-        else{return false;}
+        if(list.size()>0&&list.get(list.size()-1)>=root.val){return false;}
+        else{list.add(root.val);}
         boolean two=isvalid(root.right,list);
         return one&&two;
 
