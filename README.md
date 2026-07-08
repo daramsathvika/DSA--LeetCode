@@ -5,18 +5,14 @@ This repository contains my solutions to Data Structures and Algorithms problems
 I am consistently solving problems to improve my problem-solving skills and prepare for technical interviews.
 
 ## 📊 Progress
-- Total Problems Solved: 103
-- Easy: 52
-- Medium: 49
+- Total Problems Solved: 146
+- Easy: 71
+- Medium: 73
 - Hard: 2
 
 ## 🔥 Current Focus
-- Stack strengthening
-- Queue strengthening
-- Recursion strengthening
+- Graphs
 - Sorting
-- Binary Search revisit
-- String
 
 ## 📚 Topics Covered
 - Arrays
@@ -26,6 +22,12 @@ I am consistently solving problems to improve my problem-solving skills and prep
 - Binary Search
 - Two pointers
 - LinkedList
+- Stack
+- Queue(basic)
+- Recursion and Backtracking
+- Monotonic stacks
+- Binary Tree - BFS and DFS
+- Binary Search Tree
 
 ## 📁 Structure
 Each problem includes:
