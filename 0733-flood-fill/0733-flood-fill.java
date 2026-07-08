@@ -1,0 +1,38 @@
+class Solution {
+    int m,n,c;
+    boolean [][] vis;
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        m=image.length;n=image[0].length;
+        vis= new boolean[m][n];
+        this.vis=vis;
+        this.m=m;this.n=n;this.c=image[sr][sc];
+        Queue<int[]> q = new LinkedList<>();
+        image[sr][sc]=color;vis[sr][sc]=true;
+        q.offer(new int[]{sr,sc});
+        int[] arr = new int[2];
+        while(!q.isEmpty()){
+            int size=q.size();
+            for(int k=0;k<size;k++){
+                arr=q.poll();
+                int i=arr[0],j=arr[1];
+                if(i>0&&image[i-1][j]==c&&!vis[i-1][j]){
+                    vis[i-1][j]=true;
+                    image[i-1][j]=color;
+                    q.offer(new int[]{i-1,j});}
+                if(i<m-1&&image[i+1][j]==c&&!vis[i+1][j]){
+                    vis[i+1][j]=true;
+                    image[i+1][j]=color;
+                    q.offer(new int[]{i+1,j});} 
+                if(j>0&&image[i][j-1]==c&&!vis[i][j-1]){
+                    vis[i][j-1]=true;
+                    image[i][j-1]=color;
+                    q.offer(new int[]{i,j-1});}
+                if(j<n-1&&image[i][j+1]==c&&!vis[i][j+1]){
+                    vis[i][j+1]=true;
+                    image[i][j+1]=color;
+                    q.offer(new int[]{i,j+1});} 
+            }
+        }
+        return image;
+    }
+}
