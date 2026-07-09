@@ -3,18 +3,21 @@ class Solution {
         int i=0;
         boolean[] vis = new boolean[rooms.size()];
         vis[0]=true;
-        dfs(rooms,0,vis);
-        for(i=0;i<rooms.size();i++){
-            if(!vis[i]){return false;}
-        }
-        return true;
-    }
-    public void dfs(List<List<Integer>> rooms,int i,boolean[] vis){
-        for(int k:rooms.get(i)){
-            if(!vis[k]){
-                vis[k]=true;
-                dfs(rooms,k,vis);
+        Queue<Integer> q = new LinkedList<>();
+        for(int s:rooms.get(0)){
+            q.offer(s);
+        }   
+        while(!q.isEmpty()){
+            int size=q.size();
+            for(i=0;i<size;i++){
+                int p=q.poll();
+                vis[p]=true;
+                for(int j=0;j<rooms.get(p).size();j++){
+                    if(!vis[rooms.get(p).get(j)]){q.offer(rooms.get(p).get(j));}
+                }
             }
-        }
+        } 
+        for(i=0;i<rooms.size();i++){if(!vis[i]){return false;}}    
+        return true;
     }
 }
