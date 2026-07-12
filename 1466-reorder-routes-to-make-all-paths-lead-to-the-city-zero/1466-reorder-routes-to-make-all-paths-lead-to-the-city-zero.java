@@ -1,39 +1,26 @@
 class Solution {
     int ans;
     public int minReorder(int n, int[][] connections) {
-        ArrayList<int[]> edjalist[] = new ArrayList[n];
-        int i;
-        HashSet<int[]> set = new HashSet<>();
-        boolean vis[] = new boolean[n];
-        for(i=0;i<n;i++){
-            edjalist[i]=new ArrayList<int[]>();
-        }
+        int i; boolean vis[] = new boolean[n];
+        ArrayList<int[]> adjalist[]= new ArrayList[n];
+        for(i=0;i<n;i++){adjalist[i]=new ArrayList<>();}
         for(i=0;i<n-1;i++){
-            edjalist[connections[i][0]].add(connections[i]);
-            edjalist[connections[i][1]].add(connections[i]);
+            adjalist[connections[i][0]].add(new int[]{connections[i][1],1});
+            adjalist[connections[i][1]].add(new int[]{connections[i][0],0});
         }
-        Queue<Integer> q=new LinkedList<>();
-        q.offer(0);vis[0]=true;
-        while(!q.isEmpty()){
-            int curr=q.poll();
-            int size=edjalist[curr].size();
-            for(i=0;i<size;i++){
-                int[] edge= edjalist[curr].get(i);
-                //int[] swapedge=new int[]{edge[1],edge[0]};
-                if(edge[0]==curr&&!(set.contains(edge)/*||set.contains(swapedge)*/)){
-                    set.add(edge);
-                    //set.add(swapedge);
-                    if(!vis[edge[1]]){
-                        q.offer(edge[1]);
-                        vis[edge[1]]=true;}ans++;}
-                else{
-                    set.add(edge);
-                    if(!vis[edge[0]]){
-                        q.offer(edge[0]);
-                        vis[edge[0]]=true;}
-                }
+        vis[0]=true;
+        dfs(adjalist,vis,0);
+        return ans;
+    }
+    public void dfs(ArrayList<int[]> adjalist[],boolean[] vis,int i){
+        //System.out.println();
+        for(int p=0;p<adjalist[i].size();p++){
+            int arr[]=adjalist[i].get(p);
+            //System.out.print(arr[0]+" "+ans+" ");
+            if(!vis[arr[0]]){
+                vis[arr[0]]=true;ans+=arr[1];
+                dfs(adjalist,vis,arr[0]);
             }
         }
-        return ans;
     }
 }
