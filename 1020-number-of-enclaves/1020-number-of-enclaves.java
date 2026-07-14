@@ -18,8 +18,7 @@ class Solution {
         }
         for(i=1;i<m-1;i++){
             for(j=1;j<n-1;j++){
-                if(!vis[i][j]&&grid[i][j]==1){
-                    dfs(i,j,vis,grid,true);
+                if(!vis[i][j]&&grid[i][j]==1){ans++;
                 }
             }
         }
