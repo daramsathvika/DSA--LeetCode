@@ -1,6 +1,6 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        System.out.println(s.length()+" "+t.length());
+        //System.out.println(s.length()+" "+t.length());
         if(s.length()!=t.length()){return false;}
         if(s.equals(t)){return true;}
         int i,n=s.length();
